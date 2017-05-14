@@ -17,7 +17,7 @@
     </div>
 
     <div class="step-1">
-        {% set selectedRepo = 'allothers' %}
+        {% set selectedRepo = 'allothers' in settings.repository ? 'allothers' : selectedRepo %}
         {% set selectedRepo = 'github.com' in settings.repository ? 'github' : selectedRepo %}
         {% set selectedRepo = 'bitbucket.com' in settings.repository ? 'bitbucket' : selectedRepo %}
         {% set selectedRepo = 'gitlab.com' in settings.repository ? 'gitlab' : selectedRepo %}
@@ -156,7 +156,7 @@
             <div class="hidden-step-gitlab wizard-padding hidden">
                 <h4>GitLab</h4>
                 <p>
-                    Follow the instructions on <a href="https://docs.gitlab.com/ce/gitlab-basics/create-project.html" target="_blank">GitLab Documentation</a> to create a new GitLab repository.
+                    Follow the instructions on <a href="https://docs.gitlab.com/ce/gitlab-basics/create-project.html" target="_blank">GitLab Documentation</a> to create a new GitLab repository. Be sure to <strong> sign out </strong> of GitLab before copying the HTTPS URL for your repository.
                 </p>
             </div>
             <div class="hidden-step-allothers wizard-padding hidden">
